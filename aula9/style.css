@@ -1,0 +1,48 @@
+main{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+}
+body{
+    background-color: rgb(240, 240, 240);
+}
+h1{
+    text-align: center;
+}
+#div{
+    border: 3px solid white;
+    border-radius: 10px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 2px 2px 9px rgba(0, 0, 0, 0.3);
+}
+input{
+    width: 95%;
+    height: 28%;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+button{
+    width: 97%;
+    height: 15%;
+    background-color: #4682b4;
+    border: #4682b4;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+h2{
+    text-align: center;
+}
+#rezeDançando{
+    width: 110px;
+    height: 70px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+#divReze{
+    justify-content: center;
+    display: flex;
+}

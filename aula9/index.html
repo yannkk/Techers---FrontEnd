@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-color: #F0F1FA; font-family: Arial, sans-serif; color: #333; font-size: 16px;">
-    <strong><h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: black;">MyNotes 2026</h1></strong>
-    <div style="border: 4px solid white; width: 350px; height: 375px; background-color: white; border-radius: 10px; box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);">
-        <h3 ><strong>Adicionar Nova Nota:</strong></h3>
-        <hr style="border: none; height: 2.5px; background-color: burlywood;">
-        Titulo:<br>
-        <input type="text" placeholder="Digite o título da nota:" style="width: 300px; height: 30px; margin-bottom: 10px;">
-        <br>Conteúdo:<br>
-        <input type="text" placeholder="Escreva sua nota aqui:" style="width: 300px; height: 150px; margin-bottom:10px;">
-        <br><button style="width: 305px; height: 50px; background: #054f77;"><p style="color: white;">Salvar a Nota</p></button>
+<body>
+    <header><h1>Minhas Notas</h1></header>
+    <main>
+    <div id="div">
+        <h2>Adicionar uma nova tarefa</h2>
+        <hr>
+        Titulo:
+        <input id="tituloTarefa" type="text" required placeholder="Digite o titulo da sua tarefa aqui!" style="height: 8%;">
+        Conteúdo:
+        <input id="conteudoTarefa" type="text" required placeholder="Digite a sua tarefa aqui!">
+        <button type="submit" id="buttonTarefa"><p style="color: white;">Salvar nota</p></button>
     </div>
-    <div style="border: 4px solid white; width: 575px; height: 375px; background-color: white; border-radius: 10px; box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);">
-        <h3><strong>Notas Salvas:</strong></h3>
-        <hr style="border: none; height: 2px; background-color: burlywood;">
-        
+    <div style="width: 800px;" id="div">
+        <div id="divReze">
+            <h2>Minhas Notas</h2>
+            <img id="rezeDançando" src="gif/reze-dance.gif" alt="Reze Dançando">
+        </div>
+       
+        <hr>
+        <div id="notesTarefa" >
+
+        </div>
     </div>
+</main>
+    
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
