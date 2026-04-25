@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+.alvo{
+    border: 10px solid black;
+    height: 400px;
+    width: 400px;
+    border-radius: 500px;
+    margin: 20px auto ;
+    
+}
+
+.alvo > div > p{
+    
+}

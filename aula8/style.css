@@ -1,0 +1,27 @@
+.container p{
+    color: blue;
+    font-weight: bold;
+}
+.container > p{
+    border-bottom: 2px solid black;
+}
+.container + p{
+    color: gray;
+    font-style: italic;
+}
+.destaque{
+    background-color: blue;
+    width: 200px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 15px;
+}
+.container {
+    width: 300px;
+    padding 50px;
+    border: 10px solid black;
+}
+
+* {
+    box-sizing: border-box;
+}
