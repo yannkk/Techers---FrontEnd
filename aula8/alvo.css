@@ -1,17 +1,23 @@
 *{
     box-sizing: border-box;
-    
 }
 
 .alvo{
-    border: 10px solid black;
+    border: 30px solid black;
     height: 400px;
     width: 400px;
     border-radius: 500px;
     margin: 20px auto ;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
 }
 
-.alvo > div > p{
-    
+.alvo > div > div{
+    border: 30px solid brown;
+    height: 200px;
+    width: 200px;
+    border-radius: 500px;
+    background-color: yellow;
 }

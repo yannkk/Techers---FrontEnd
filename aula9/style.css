@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.item{
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    /* margin: 5px; */
+    border: 1px solid black;
+}
+.container{
+    display: flex;
+    gap: 15px;
+    margin: 8px;
+    /* flex-direction: column; */
+    align-items: center;
+}
+

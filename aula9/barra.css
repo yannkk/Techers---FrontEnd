@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: lightblue;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-img{
+    width: 300px
+}
+ul{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 75px;
+}
+.redes{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-right: 20px;
+}
