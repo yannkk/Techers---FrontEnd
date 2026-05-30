@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Components - Template no HTML</title>
+    <!-- Importação do script do componente com 'defer' -->
+    <script src="script.js" defer></script> 
+</head>
+
+<body>
+
+    <!-- O Componente em uso (Light DOM) -->
+    <div>
+        <popup-info>
+            <!-- Injeção dinâmica utilizando Content Transclusion! -->
+            <span slot="meu-texto">Injeção dinâmica via Slot!</span>
+        </popup-info>
+    </div>
+     <!-- O Molde do Componente (Inerte por padrão) -->
+    <template id="popup-template">
+
+
+        <style>
+            .wrapper { position: relative; display: inline-block; font-family: sans-serif; }
+            .info {
+                visibility: hidden; width: 200px; background: #2c3e50; color: #fff;
+                text-align: center; padding: 10px; border-radius: 6px;
+                position: absolute; z-index: 1; bottom: 125%; left: 50%;
+                margin-left: -100px; opacity: 0; transition: opacity 0.3s;
+            }
+            .icon:hover + .info { visibility: visible; opacity: 1; }
+            img { width: 30px; cursor: pointer; }
+        </style>
+
+
+        <span class="wrapper">
+            <span class="icon" tabindex="0">
+                <img src="default.png" alt="Ícone de Informação">
+            </span>
+            <span class="info">
+                 <!-- Ponto de transclusão para árvores DOM fornecidas pelo usuário -->
+                <slot name="meu-texto">Texto padrão de fallback</slot>
+            </span>
+        </span>
+
+        
+    </template>
+
+</body>
+</html>
+
+
+
+//<template></template>
+//cloneNode()
+//<slot></slot>
+//Shadow DOM
