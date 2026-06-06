@@ -1,0 +1,5 @@
+profile-card::part(btn-acao){
+    background-color: #e74c3c
+    border-radius: 20px
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1)
+}
