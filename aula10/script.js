@@ -1,52 +1,49 @@
 class PopupInfo extends HTMLElement {
-    constructor() {
+    constructor(){
+        //Sempre chamar o super() primeiro dentro do constructor
+        //Isso permite que a classe HERDE os "poderes" do HTMLElement
         super();
     }
-}
+    //método de ciclo de vida: roda quando a tag é inserida no HTML
+    connectedCallBack(){
+        //1-criar os elementos internos via JS
+        const wrapper = document.createElement("span");
+        wrapper.setAttribute("class", "wrapper");
 
-connectedCallback() {
-    const wrapper = document.createElement('span');
-    wrapper.setAttribute('class', 'wrapper');
+        const icon = document.createElement("span");
+        icon.setAttribute("class", "icon");
+        icon.setAttribute("tabindex", "0");
 
-    const icon = document.createElement('span');
-    icon.setAttribute('class', 'icon');
-    icon.setAttribute('tabindex', '0');
+        const info = document.createElement("span");
+        info.setAttribute("class", "info");
 
-    const info = document.createElement('span');
-    info.setAttribute('class', 'info');
+        //2-LERRRRR informações dos atributos da nossa tag
+        const text = this.getAttribute("data-text");
+        info.textContent = text;
 
-    //2
+        //3-lógica condicional de imagem
+        let imgUrl;
+        if(this.hasAttribute("img")){
+        imgUrl = this.getAttribute("img");
+        } else {
+            imgUrl = "default.png"; //Imagem padrão caso o usuário não envie uma
+        }
 
-    const text = this.getAttribute('text');
-    info.textContent = text;
+        const img = document.createElement("img");
+        img.src = imgUrl;
+        img.setAttribute("alt", "Icone de informação");
+        img.setAttribute("width", "100px");
 
-    //3
 
-    let imgUrl;
-    if (this.hasAttribute('img')) {
-        imgUrl = this.getAttribute('img');
-    } else {
-        imgUrl = 'default.png'; // imagem padrao a ser utilizado com o usuario nao fornecer uma
+        //4- criando a hierarquia
+        icon.appendChild(img);
+        wrapper.appendChild(icon);
+        wrapper.appendChild(info);
+
+        //5-anexando tudo dentro do NOOOOOOSSSOOOOOOO componente (o famoso this)
+        this.appendChild(wrapper);
+
     }
-
-    const img = document.createElement('img');
-    img.src = imgUrl;
-    img.setAttribute('alt', 'Icon');
-    img.setAttribute('width', '100px');
-
-    //4
-    icon.appendChild(img);
-    wrapper.appendChild(icon);
-    wrapper.appendChild(info);
-    this.appendChild(wrapper);
-
-    //anexar tudo dentro do NOSSO componente personalizado
-    this.appendChild(wrapper);
-
 }
-
-
-// API CustomElementRegistry >> cria uma tag HTML personalizada
-    customElements.define('popup-info', PopupInfo);
-// Registro do componente no navegador, associando a tag 'popup-info' à classe PopupInfo
-// Agora, sempre que a tag <popup-info> for usada no HTML, o navegador criará uma instância da classe PopupInfo e executará o código definido nela.
+//Registrando o componente no navegador para que a tag <popup-info> passe a existir
+customElements.define("popup-info", PopupInfo);
